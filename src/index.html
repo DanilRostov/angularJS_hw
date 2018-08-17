@@ -9,8 +9,12 @@
   <title>HW AngularJS</title>
 </head>
 <body ng-app="myApp">
-  <div ng-controller="MainCtrl">
-    <my-button text="Кнопка 1" on-click="click1()">Кнопка 1</my-button>
-  </div>
+  <container>
+    <my-button ng-click="container.clickGreen()" text="Green" ></my-button>
+    <my-button ng-click="container.click1Red()" text="Red"></my-button>
+    <my-button ng-click="container.click1Blue()" text="Blue"></my-button>
+    <my-button ng-click="container.click1Yellow()" text="Yellow"></my-button>
+    <my-button ng-click="container.click1Grey()" text="Grey"></my-button>
+  </container>
 </body>
 </html>

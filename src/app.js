@@ -1,22 +1,40 @@
 const app = angular.module('myApp', []);
 
-app.controller('MainCtrl', function($scope) {
-  $scope.someText = 'Btn';
+app.controller('MainCtrl', actionsForBtns);
+
+app.directive('container', function () {
+  return {
+    restrict: 'EA',
+    controllerAs: 'container',
+    controller: actionsForBtns
+  }
 });
 
-app.directive('myButton', function() {
+app.directive('myButton', function () {
   return {
-    restrict: 'E',
+    restrict: 'EA',
     scope: {
-      text: '@',
-      onClick: '@onClick'
+      text: '@'
     },
     replace: true,
-    template: '<button ng-click={{onClick()}}>{{text}}</button>',
-    link: function (scope, element, attr) { 
-      scope.click1 = function() {
-        alert('hello');
-      }
-    }
+    template: '<button>{{text}}</button>',
   }
-})
+});
+
+function actionsForBtns() {
+  this.clickGreen = function () {
+    alert('clickGreen');
+  };
+  this.click1Red = function () {
+    alert('clickRed');
+  };
+  this.click1Blue = function () {
+    alert('clickBlue');
+  };
+  this.click1Yellow = function () {
+    alert('click1Yellow');
+  };
+  this.click1Grey = function () {
+    alert('click1Grey');
+  };
+}
