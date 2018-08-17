@@ -9,12 +9,15 @@
   <title>HW AngularJS</title>
 </head>
 <body ng-app="myApp">
+  <div ng-controller="titleCtrl as title">
+    {{title.text}}
+  </div>
   <container>
-    <my-button ng-click="container.clickGreen()" text="Green" ></my-button>
-    <my-button ng-click="container.click1Red()" text="Red"></my-button>
-    <my-button ng-click="container.click1Blue()" text="Blue"></my-button>
-    <my-button ng-click="container.click1Yellow()" text="Yellow"></my-button>
-    <my-button ng-click="container.click1Grey()" text="Grey"></my-button>
+    <my-button id="green" ng-click="container.clickGreen('green')" text="Green" ></my-button>
+    <my-button id="red" ng-click="container.clickRed('red')" text="Red"></my-button>
+    <my-button id="blue" ng-click="container.clickBlue('blue')" text="Blue"></my-button>
+    <my-button id="yellow" ng-click="container.click1Yellow('yellow')" text="Yellow"></my-button>
+    <my-button id="grey" ng-click="container.click1Grey('grey')" text="Grey"></my-button>
   </container>
 </body>
 </html>

@@ -1,6 +1,9 @@
 const app = angular.module('myApp', []);
 
 app.controller('MainCtrl', actionsForBtns);
+app.controller('titleCtrl', function() {
+  this.text = 'Please pick your favourite calour';
+})
 
 app.directive('container', function () {
   return {
@@ -22,19 +25,19 @@ app.directive('myButton', function () {
 });
 
 function actionsForBtns() {
-  this.clickGreen = function () {
-    alert('clickGreen');
+  this.clickGreen = function (id) {
+    document.getElementById(id).style.background = 'lightgreen';
   };
-  this.click1Red = function () {
-    alert('clickRed');
+  this.clickRed = function (id) {
+    document.getElementById(id).style.background = 'red';
   };
-  this.click1Blue = function () {
-    alert('clickBlue');
+  this.clickBlue = function (id) {
+    document.getElementById(id).style.background = 'blue';
   };
-  this.click1Yellow = function () {
-    alert('click1Yellow');
+  this.click1Yellow = function (id) {
+    document.getElementById(id).style.background = 'yellow';
   };
-  this.click1Grey = function () {
-    alert('click1Grey');
+  this.click1Grey = function (id) {
+    document.getElementById(id).style.background = 'grey';
   };
 }
